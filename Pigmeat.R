@@ -3,8 +3,8 @@ setwd("C:/Users/colruyt/Downloads/")
 pig_df <- read.csv("Pigmeat_Prices.csv", header = TRUE)
 pig_df
 
-#Text Manipulation -- To remove special char "Â"
-pig_df$Price <- gsub(pattern = "�,�", replacement = "", pig_df$Price)
+#Text Manipulation -- To remove special char "Ã‚"
+pig_df$Price <- gsub(pattern = "â,¬", replacement = "", pig_df$Price)
 View(pig_df)
 
 #include class type E Pig meat of Belgium
@@ -27,8 +27,8 @@ pig_df_E$Price <- as.numeric(pig_df_E$Price)
 View(pig_df_E)
 
 #sum pig meat price per year
-pig_sales_df <- aggregate(pig_df_E$Price, by=list(year=pig_df_E$year), FUN=sum)
-View(pig_sales_df)
+#pig_sales_df <- aggregate(pig_df_E$Price, by=list(year=pig_df_E$year), FUN=sum)
+#View(pig_sales_df)
 
 ### rmse function#####
 rmse<-function(error){
